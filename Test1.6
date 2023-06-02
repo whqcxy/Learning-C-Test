@@ -1,0 +1,19 @@
+int main() {
+	char arr1[] = "welcome to home!!!" ;
+	char arr2[] = "##################";
+	int left = 0;
+	int right = strlen(arr1) - 1;//strlen的作用是计算数组长度，在\0处结束不算\0
+	while (left <= right)
+	{
+		arr2[left] = arr1[left];
+		arr2[right] = arr1[right];
+		printf("%s\n", arr2);
+		Sleep(1000);//函数Sleep，作用是每执行sleep时停顿，单位是毫秒,使用需引入Windows.h
+		system("cls");//执行系统命令的一个函数,他的头文件是stdlib.h
+		//cls命令作用是清空屏幕
+		left++;
+		right--;
+	}
+	printf("%s\n", arr2);
+	return 0;
+}
