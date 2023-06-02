@@ -1,0 +1,33 @@
+//素数是只能被1和自身整除的数
+#include <math.h>
+int main(){
+	int num = 0;
+	int i = 0;
+	int count = 0;
+	for (num = 1; num <= 200; num++){//试除法
+		for (i = 2; i < num; i++) {
+			if (num%i == 0) {
+					break;
+				}
+			}
+			if (num == i) {
+				printf("%d ", num);
+				count++;
+			}
+		}
+
+	//优化算法
+	for (num = 3; num <= 200; num+=2) {//素数不可能是偶数
+		for (i = ; i <= sqrt(num); i++) {//一个数能被拆分因数，必然有一个数小于平方根，一个数大于平方根
+			if (num % i == 0) {//sqrt()函数，作用是平方根，必须引入math.h包才能使用
+				break;
+			}
+		}
+		if (i>sqrt(num)) {
+			printf("%d ", num);
+			count++;
+			}
+	}
+	printf("\n%d", count);
+	return 0;
+}
